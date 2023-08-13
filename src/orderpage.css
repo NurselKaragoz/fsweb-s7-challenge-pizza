@@ -1,0 +1,15 @@
+.order-navbar {
+  background-color: #ce2829;
+  color: #faf7f2;
+  text-align: center;
+}
+.listofpage {
+  list-style: none;
+  display: flex;
+  padding-left: 35vw;
+}
+.ordertext {
+  display: flex;
+  flex-direction: column;
+  padding-left: 35vw;
+}
