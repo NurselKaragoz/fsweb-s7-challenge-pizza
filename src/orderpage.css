@@ -13,3 +13,7 @@
   flex-direction: column;
   padding-left: 35vw;
 }
+.orderoption {
+  display: flex;
+  flex-direction: column;
+}
