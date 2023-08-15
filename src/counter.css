@@ -1,0 +1,7 @@
+.buton {
+  background-color: #fdc913;
+}
+.btn-box {
+  display: flex;
+  flex-direction: row;
+}

@@ -17,3 +17,20 @@
   display: flex;
   flex-direction: column;
 }
+.hamur-selection {
+  display: flex;
+
+  padding-left: 35vw;
+  flex-direction: column;
+}
+.order-select {
+  display: flex;
+}
+.yıldız {
+  color: #ce2829;
+}
+.counter-btn {
+  display: flex;
+
+  padding-left: 35vw;
+}

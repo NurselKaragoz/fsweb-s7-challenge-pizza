@@ -1,5 +1,15 @@
 .home {
-  background-color: #ce2829;
   color: #faf7f2;
   text-align: center;
+  font-family: "Barlow", sans-serif;
+  background-color: #ce2829;
+}
+.img-object {
+  object-position: right bottom;
+}
+#ilkyazı {
+  font-weight: bolder;
+}
+p {
+  font-size: larger;
 }
