@@ -3,8 +3,7 @@ import "./Homepage.css";
 import Food from "./mvp-banner.png";
 import { Button } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link, Route, Switch } from "react-router-dom";
-import Order from "./pizza";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -14,11 +13,12 @@ const Home = () => {
         <p>KOD ACIKTIRIR </p>
         <p>PİZZA DOYURUR</p>
 
-        <Button id="order-pizza" color="warning">
-          <Link to="/pizza" className="link">
+        <Link to="/pizza" className="link">
+          <Button id="order-pizza" color="warning">
             ACIKTIM
-          </Link>
-        </Button>
+          </Button>
+        </Link>
+
         <br />
 
         <img id="img-object" src={Food} alt="Food" />

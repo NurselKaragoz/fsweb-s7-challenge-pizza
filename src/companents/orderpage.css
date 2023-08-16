@@ -1,3 +1,6 @@
+* {
+  font-family: "Barlow", sans-serif;
+}
 .order-navbar {
   background-color: #ce2829;
   color: #faf7f2;
@@ -11,6 +14,8 @@
   display: flex;
   flex-direction: column;
   padding-left: 35vw;
+  padding-right: 35vw;
+  font-family: "Barlow", sans-serif;
 }
 .orderoption {
   display: flex;
@@ -19,7 +24,6 @@
 .hamur-selection {
   display: flex;
 
-  padding-left: 35vw;
   flex-direction: column;
 }
 .order-select {
@@ -31,7 +35,7 @@
 .counter-btn {
   display: flex;
 
-  padding-left: 35vw;
+  justify-content: space-evenly;
 }
 .link-order {
   text-decoration: none;

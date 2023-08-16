@@ -4,7 +4,7 @@ import { Button } from "reactstrap";
 import "./counter.css";
 
 const Counter = () => {
-  const [counter, setCounter] = useState(1);
+  const [counter, setCounter] = useState(0);
   const Arttır = () => setCounter(counter + 1);
   const Azalt = () => {
     if (counter > 0) setCounter(counter - 1);

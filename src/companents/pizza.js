@@ -1,13 +1,17 @@
 import React from "react";
 import "./orderpage.css";
 import { useState, useEffect } from "react";
-import { Form, Label, Input } from "reactstrap";
+import { Form, Label, Input, Button } from "reactstrap";
 import Counter from "../counter";
 import { Link } from "react-router-dom";
-import Home from "./home";
 
 const Order = () => {
-  const [formData, setFormData] = useState({ malzemeler: false });
+  const [formData, setFormData] = useState({
+    pepperoni: false,
+    domates: false,
+    biber: false,
+    sosis: false,
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,7 +19,7 @@ const Order = () => {
   };
   function changeHandle(e) {
     const { value, name, type, checked } = e.target;
-    setFormData({ ...formData, [name]: type === "chekbox" ? checked : value });
+    setFormData({ ...formData, [name]: type === "checkbox" ? checked : value });
   }
   useEffect(() => {
     console.log("Data=>>", formData);
@@ -44,7 +48,7 @@ const Order = () => {
 
       <div className="ordertext">
         <h3>Position Absolute Acı Pizza</h3>
-        <h1> Fiyat </h1>
+        <h4> Fiyat </h4>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id
           suscipit eros. Sed convallis ipsum nec lectus tempus malesuada. Ut
@@ -98,7 +102,6 @@ const Order = () => {
                     name="hamur"
                     id="hamur-select"
                     onChange={changeHandle}
-                    placeholder="Hamur Kalınlığı"
                   >
                     <option value="Kalın">İnce</option>
                     <option value="Kalın">Kalın</option>
@@ -186,6 +189,11 @@ const Order = () => {
 
       <div className="counter-btn">
         <Counter />
+        <Label>
+          <Button color="warning" onClick={handleSubmit}>
+            Sipariş Ver
+          </Button>
+        </Label>
       </div>
     </>
   );
