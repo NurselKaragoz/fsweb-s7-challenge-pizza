@@ -1,9 +1,10 @@
 import React from "react";
 import "./Homepage.css";
-import Food from "./adv-aseets/food-2.png";
+import Food from "./food-2.png";
 import { Button } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import { Link } from "react-router-dom";
+import { Link, Route, Switch } from "react-router-dom";
+import Order from "./pizza";
 
 const Home = () => {
   return (
@@ -12,8 +13,11 @@ const Home = () => {
         <h1 id="ilkyazı">Teknolojik Yemekler</h1>
         <p>KOD ACIKTIRIR </p>
         <p>PİZZA DOYURUR</p>
-        <Button color="warning">
-          {/* ACIKTIM <Link to="/orderpage.js"></Link> */}
+
+        <Button id="order-pizza" color="warning">
+          <Link to="/pizza" className="link">
+            ACIKTIM
+          </Link>
         </Button>
 
         <div className="img-object">

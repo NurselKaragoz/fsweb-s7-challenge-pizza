@@ -1,13 +1,18 @@
 import React from "react";
-import Order from "./orderpage";
+import { Switch, Route } from "react-router-dom";
 import "./App.css";
-import Home from "./home";
+import Home from "./companents/home";
+import Order from "./companents/pizza";
+import Onay from "./companents/onay";
 
 const App = () => {
   return (
     <>
-      <Home />
-      <Order />
+      <Switch>
+        <Route path="/pizza" component={Order} />
+        <Route path="/" component={Home} />
+        <Route path="/succes" component={Onay} />
+      </Switch>
     </>
   );
 };

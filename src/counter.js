@@ -5,7 +5,7 @@ import "./counter.css";
 
 const Counter = () => {
   const [counter, setCounter] = useState(1);
-  const Artır = () => setCounter(counter + 1);
+  const Arttır = () => setCounter(counter + 1);
   const Azalt = () => setCounter(counter - 1);
 
   return (
@@ -15,7 +15,7 @@ const Counter = () => {
           -
         </Button>
         {counter}
-        <Button className="buton" onClick={Artır}>
+        <Button className="buton" onClick={Arttır}>
           +
         </Button>
       </div>

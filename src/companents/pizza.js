@@ -1,9 +1,11 @@
 import React from "react";
-
 import "./orderpage.css";
 import { useState, useEffect } from "react";
-import { Form, Label, Input, Option, Select } from "reactstrap";
-import Counter from "./counter";
+import { Form, Label, Input } from "reactstrap";
+import Counter from "../counter";
+import { Link } from "react-router-dom";
+import Home from "./home";
+
 const Order = () => {
   const [formData, setFormData] = useState({ malzemeler: false });
 
@@ -26,9 +28,9 @@ const Order = () => {
           <h1>Teknolojik Yemekler</h1>
           <nav>
             <ul className="listofpage">
-              <li>Anasayfa</li>
-              <li>-Seçenekler</li>
-              <li>-Sipariş Oluştur</li>
+              <Link to="/"> Anasayfa </Link>
+              <Link to="/pizza">-Seçenekler </Link>
+              <Link to="/succes">-Sipariş Oluştur</Link>
             </ul>
           </nav>
         </div>
@@ -44,7 +46,7 @@ const Order = () => {
             diam venenatis augue. Etiam ornare tellus at sodales feugiat
           </p>
           <div>
-            <Form>
+            <Form id="pizza-form">
               <div className="order-select">
                 <div className="orderoption">
                   <h3>
@@ -64,7 +66,7 @@ const Order = () => {
                       type="radio"
                       name="option"
                       value={2}
-                      onchange={changeHandle}
+                      onChange={changeHandle}
                     ></Input>
                     Orta
                   </Label>
@@ -73,7 +75,7 @@ const Order = () => {
                       type="radio"
                       name="option"
                       value={3}
-                      onchange={changeHandle}
+                      onChange={changeHandle}
                     ></Input>
                     Büyük
                   </Label>
@@ -106,7 +108,7 @@ const Order = () => {
                     type="checkbox"
                     name="pepperoni"
                     checked={formData.pepperoni}
-                    onchange={changeHandle}
+                    onChange={changeHandle}
                   ></Input>
                 </Label>
                 <Label htmlFor="sosis">
@@ -116,7 +118,7 @@ const Order = () => {
                     type="checkbox"
                     name="sosis"
                     checked={formData.sosis}
-                    onchange={changeHandle}
+                    onChange={changeHandle}
                   ></Input>
                 </Label>
                 <Label>
@@ -126,7 +128,7 @@ const Order = () => {
                     type="checkbox"
                     name="domates"
                     checked={formData.domates}
-                    onchange={changeHandle}
+                    onChange={changeHandle}
                   ></Input>
                 </Label>
                 <Label>
@@ -136,7 +138,7 @@ const Order = () => {
                     type="checkbox"
                     name="biber"
                     checked={formData.biber}
-                    onchange={changeHandle}
+                    onChange={changeHandle}
                   ></Input>
                 </Label>
                 <div>
@@ -148,7 +150,7 @@ const Order = () => {
                       type="text"
                       name="note"
                       value={formData.note}
-                      onchange={changeHandle}
+                      onChange={changeHandle}
                       placeholder="Siparişinize eklemek istediğiniz bir not var mı ?"
                       size="300"
                     ></Input>
@@ -159,11 +161,11 @@ const Order = () => {
                     Kişisel Bilgilerinizi Girin
                     <hr />
                     <Input
-                      id="bilgi"
+                      id="name-input"
                       type="text"
                       name="bilgi"
                       value={formData.bilgi}
-                      onchange={changeHandle}
+                      onChange={changeHandle}
                       placeholder="İsim, Soyisim ve adres bilgilerini giriniz."
                       size="300"
                     ></Input>
