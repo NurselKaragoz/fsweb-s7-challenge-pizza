@@ -2,12 +2,11 @@
   background-color: #ce2829;
   color: #faf7f2;
   text-align: center;
+  font-family: "Barlow", sans-serif;
+
+  text-decoration: none;
 }
-.listofpage {
-  list-style: none;
-  display: flex;
-  padding-left: 35vw;
-}
+
 .ordertext {
   display: flex;
   flex-direction: column;
@@ -33,4 +32,17 @@
   display: flex;
 
   padding-left: 35vw;
+}
+.link-order {
+  text-decoration: none;
+  color: #faf7f2;
+}
+.link-text {
+  display: flex;
+  color: #faf7f2;
+}
+.navbar {
+  background-color: #ce2829;
+  display: flex;
+  flex-direction: column;
 }

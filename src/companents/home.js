@@ -1,6 +1,6 @@
 import React from "react";
 import "./Homepage.css";
-import Food from "./food-2.png";
+import Food from "./mvp-banner.png";
 import { Button } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link, Route, Switch } from "react-router-dom";
@@ -19,10 +19,9 @@ const Home = () => {
             ACIKTIM
           </Link>
         </Button>
+        <br />
 
-        <div className="img-object">
-          <img src={Food} alt="Food" />
-        </div>
+        <img id="img-object" src={Food} alt="Food" />
       </div>
     </>
   );

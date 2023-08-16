@@ -132,10 +132,12 @@ table {
   text-align: center;
   font-family: "Barlow", sans-serif;
   background-color: #ce2829;
+  min-height: 100vh;
 }
-.img-object {
-  object-position: bottom;
+#img-object {
+  width: 100%;
 }
+
 #ilkyazı {
   font-weight: bolder;
 }
