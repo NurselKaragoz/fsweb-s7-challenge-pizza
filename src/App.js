@@ -6,7 +6,6 @@ import Order from "./companents/pizza";
 import Onay from "./companents/onay";
 
 const App = () => {
-  // state management ex. : redux, app-context, recoil.js
   return (
     <>
       <Switch>

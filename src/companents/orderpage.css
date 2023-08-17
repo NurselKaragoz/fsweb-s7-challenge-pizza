@@ -13,8 +13,8 @@
 .ordertext {
   display: flex;
   flex-direction: column;
-  padding-left: 35vw;
-  padding-right: 35vw;
+  padding-left: 30vw;
+  padding-right: 30vw;
   font-family: "Barlow", sans-serif;
 }
 .orderoption {
@@ -54,4 +54,23 @@
 .btn-sipariş {
   text-decoration: none;
   color: black;
+  size: 25vw;
+}
+
+.sipariş-ver {
+  display: flex;
+  flex-direction: column;
+  border: 1px;
+  border-style: groove;
+
+  min-width: 25vw;
+  text-align: center;
+}
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.counter-btn {
+  max-height: 7vh;
 }
