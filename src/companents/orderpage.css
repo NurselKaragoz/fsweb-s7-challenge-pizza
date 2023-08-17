@@ -74,3 +74,11 @@
 .counter-btn {
   max-height: 7vh;
 }
+.price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#toplam-text {
+  color: #ce2829;
+}

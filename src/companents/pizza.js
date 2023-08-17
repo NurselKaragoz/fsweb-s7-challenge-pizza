@@ -46,8 +46,7 @@ const Order = () => {
     formData.pepperoni * 5;
 
   let fiyat = secimlerFiyat + boyutFiyat;
-
-  console.log(fiyat);
+  console.log(`$counter`);
 
   return (
     <>
@@ -229,7 +228,7 @@ const Order = () => {
               <strong>Sipariş Toplamı</strong>
             </p>
             <p>Seçimler {secimlerFiyat}₺</p>
-            <p>Toplam {fiyat}₺</p>
+            <p id="toplam-text">Toplam {fiyat}₺</p>
             <Label>
               <Button size="lg" block color="warning" onClick={handleSubmit}>
                 <Link className="btn-sipariş" to="/succes">
