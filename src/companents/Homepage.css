@@ -134,17 +134,18 @@ table {
   background-color: #ce2829;
   min-height: 100vh;
 }
-#img-object {
-  width: 100%;
-}
 
 #ilkyazı {
-  font-weight: bolder;
+  padding-top: 5%;
 }
-p {
-  font-size: larger;
-}
+
 .link {
   text-decoration: none;
   color: black;
+}
+#order-pizza {
+  margin-top: 5%;
+}
+#text-tanıtım {
+  font-size: 3rem;
 }

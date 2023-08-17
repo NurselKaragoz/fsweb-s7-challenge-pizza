@@ -1,0 +1,16 @@
+#baslik {
+  margin-top: 5%;
+  text-align: center;
+  margin-bottom: 10%;
+  color: #faf7f2;
+}
+
+.text-onay {
+  display: flex;
+  font-family: "Barlow", sans-serif;
+  flex-direction: column;
+  text-align: center;
+  background-color: #ce2829;
+  color: #faf7f2;
+  min-height: 100vh;
+}

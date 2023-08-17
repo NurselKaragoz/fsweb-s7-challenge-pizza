@@ -24,25 +24,39 @@ const Order = () => {
   useEffect(() => {
     console.log("Data=>>", formData);
   }, [formData]);
+  const fiyat =
+    formData.biber * 5 +
+    formData.domates * 5 +
+    formData.sosis * 5 +
+    formData.pepperoni * 5;
+
+  console.log(fiyat);
+
+  //query
+  //get -> denem.com/kullanıcılar?adi=ali
+
+  //command
+  //post -> denem.com/kullanıcılar
+  //{adi:ali}
 
   return (
     <>
       <div className="navbar">
         <div className="order-navbar">
-          <h1>Teknolojik Yemekler</h1>
+          <h1>
+            <strong>Teknolojik Yemekler </strong>
+          </h1>
         </div>
         <div className="link-text">
-          <ul className="listofpage">
-            <Link className="link-order" to="/">
-              Anasayfa
-            </Link>
-            <Link className="link-order" to="/pizza">
-              -Seçenekler
-            </Link>
-            <Link className="link-order" to="/succes">
-              -Sipariş Oluştur
-            </Link>
-          </ul>
+          <Link className="link-order" to="/">
+            Anasayfa
+          </Link>
+          <Link className="link-order" to="/pizza">
+            -Seçenekler
+          </Link>
+          <li className="link-order" to="/succes">
+            -Sipariş Oluştur
+          </li>
         </div>
       </div>
 
@@ -50,12 +64,12 @@ const Order = () => {
         <h3>Position Absolute Acı Pizza</h3>
         <h4> Fiyat </h4>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id
-          suscipit eros. Sed convallis ipsum nec lectus tempus malesuada. Ut
-          lacinia tortor turpis, non vehicula neque vestibulum eu. Morbi commodo
-          tortor quis quam sodales accumsan. In imperdiet, ligula non tincidunt
-          finibus, leo enim bibendum sem, sit amet porttitor ipsum diam
-          venenatis augue. Etiam ornare tellus at sodales feugiat
+          Frontend Dev olarak hala position:absolute kullanıyorsan bu acı pizza
+          tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer
+          malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir
+          fırınd yüksek sıcaklıkta pişirilen, genellikle yuvarlak,
+          düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli
+          lezzetli bir yemektir.. Küçük bir pizzaya bazen pizzetta denir.
         </p>
         <div>
           <Form id="pizza-form">
@@ -177,7 +191,7 @@ const Order = () => {
                     name="bilgi"
                     value={formData.bilgi}
                     onChange={changeHandle}
-                    placeholder="İsim, Soyisim ve adres bilgilerini giriniz."
+                    placeholder="İsim, Soyisim ve Adres bilgilerini giriniz."
                     size="300"
                   ></Input>
                 </Label>
@@ -191,7 +205,9 @@ const Order = () => {
         <Counter />
         <Label>
           <Button color="warning" onClick={handleSubmit}>
-            Sipariş Ver
+            <Link className="btn-sipariş" to="/succes">
+              Sipariş Ver
+            </Link>
           </Button>
         </Label>
       </div>
