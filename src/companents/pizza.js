@@ -2,7 +2,7 @@ import React from "react";
 import "./orderpage.css";
 import { useState, useEffect } from "react";
 import { Form, Label, Input, Button } from "reactstrap";
-import Counter from "../counter";
+
 import { Link } from "react-router-dom";
 
 const Order = () => {
@@ -27,6 +27,12 @@ const Order = () => {
     console.log("Data=>>", formData);
   }, [formData]);
 
+  const [counter, setCounter] = useState(1);
+  const Arttır = () => setCounter(counter + 1);
+  const Azalt = () => {
+    if (counter > 0) setCounter(counter - 1);
+  };
+
   console.log(fiyat);
   console.log(formData.value);
   console.log(formData.option);
@@ -45,8 +51,8 @@ const Order = () => {
     formData.sosis * 5 +
     formData.pepperoni * 5;
 
-  let fiyat = secimlerFiyat + boyutFiyat;
-  console.log(`$counter`);
+  let tekFiyat = secimlerFiyat + boyutFiyat;
+  let fiyat = tekFiyat * counter;
 
   return (
     <>
@@ -221,7 +227,19 @@ const Order = () => {
         </div>
         <div className="footer">
           <div className="counter-btn">
-            <Counter />
+            <div className="btn-box">
+              <Button className="buton" color="warning" onClick={Azalt}>
+                -
+              </Button>
+
+              <Button outline color="warning">
+                {counter}
+              </Button>
+
+              <Button className="buton" color="warning" onClick={Arttır}>
+                +
+              </Button>
+            </div>
           </div>
           <div className="sipariş-ver">
             <p>

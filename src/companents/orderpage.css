@@ -23,11 +23,11 @@
 }
 .hamur-selection {
   display: flex;
-
   flex-direction: column;
 }
 .order-select {
   display: flex;
+  justify-content: space-between;
 }
 .yıldız {
   color: #ce2829;
