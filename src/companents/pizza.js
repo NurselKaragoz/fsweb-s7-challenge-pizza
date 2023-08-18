@@ -2,8 +2,18 @@ import React from "react";
 import "./orderpage.css";
 import { useState, useEffect } from "react";
 import { Form, Label, Input, Button } from "reactstrap";
-
+import * as Yup from "yup";
 import { Link } from "react-router-dom";
+import axios from "axios";
+
+let schema = Yup.object().shape({
+  bilgi: Yup.string()
+    .min(2, "bilgilerinizi doğru girmelisiniz")
+    .required("İsim bilgisi gereklidir"),
+});
+schema.isValid({}).then((valid) => {
+  console.log(valid);
+});
 
 const Order = () => {
   const [formData, setFormData] = useState({
@@ -18,7 +28,15 @@ const Order = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("submit edildi", formData);
+
+    axios
+      .post("https://reqres.in/api/users", formData)
+      .then((res) => {
+        console.log("success", res);
+      })
+      .catch((err) => console.log(err.response));
   };
+
   function changeHandle(e) {
     const { value, name, type, checked } = e.target;
     setFormData({ ...formData, [name]: type === "checkbox" ? checked : value });
@@ -33,13 +51,10 @@ const Order = () => {
     if (counter > 0) setCounter(counter - 1);
   };
 
-  console.log(fiyat);
-  console.log(formData.value);
-  console.log(formData.option);
   let boyutFiyat = 0;
-  if (formData.option == 1) {
+  if (formData.option === "1") {
     boyutFiyat = 85.5;
-  } else if (formData.option == 2) {
+  } else if (formData.option === "2") {
     boyutFiyat = 105.5;
   } else {
     boyutFiyat = 120;
@@ -77,7 +92,9 @@ const Order = () => {
         </div>
 
         <div className="ordertext">
-          <h3>Position Absolute Acı Pizza</h3>
+          <h5>
+            <strong>Position Absolute Acı Pizza</strong>
+          </h5>
           <div className="price">
             <h6>
               <strong>{boyutFiyat}₺</strong>
@@ -99,9 +116,9 @@ const Order = () => {
             <Form id="pizza-form">
               <div className="order-select">
                 <div className="orderoption">
-                  <h3>
+                  <h5>
                     Boyut Seç<span className="yıldız">*</span>
-                  </h3>
+                  </h5>
                   <Label>
                     <Input
                       type="radio"
@@ -132,9 +149,9 @@ const Order = () => {
                   </Label>
                 </div>
                 <div className="hamur-selection">
-                  <h3>
+                  <h5>
                     Hamur Seç <span className="yıldız">*</span>
-                  </h3>
+                  </h5>
                   <Label for="hamur-select">
                     <Input
                       type="select"
@@ -149,7 +166,7 @@ const Order = () => {
                 </div>
               </div>
               <div className="ek-malzemeler">
-                <h3>Ek Malzemeler</h3>
+                <h5>Ek Malzemeler</h5>
                 <p>En fazla 10 malzeme seçebilirsiniz 5₺ </p>
                 <Label htmlFor="pepperoni">
                   Pepperoni
